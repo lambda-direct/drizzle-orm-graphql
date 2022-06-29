@@ -3,11 +3,14 @@ import { drizzle } from 'drizzle-orm';
 import { applyMiddleware } from 'graphql-middleware';
 import { allow, deny, shield } from 'graphql-shield';
 import ConsoleLogger from 'drizzle-orm/logger/consoleLogger';
+import buildSchema, {
+	AnyTable,
+	buildGQLTypeFromTable,
+} from 'drizzle-orm-graphql';
 
-import { UsersTable } from '../models/UsersTable';
-import { CitiesTable } from '../models/CitiesTable';
+import { UsersTable } from './models/UsersTable';
+import { CitiesTable } from './models/CitiesTable';
 import { GraphQLInt } from 'graphql';
-import buildSchema, { AnyTable, buildGQLTypeFromTable } from './schema-builder';
 
 async function main() {
 	const db = await drizzle.connect({

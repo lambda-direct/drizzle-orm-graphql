@@ -1,2 +1,2 @@
 migrationRootFolder: drizzle
-dataFolder: ./models
+dataFolder: models

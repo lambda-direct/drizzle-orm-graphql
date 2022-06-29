@@ -1,0 +1,11 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"paths": {
+			"drizzle-orm-graphql": ["src/index.ts"],
+			"drizzle-orm-graphql/*": ["src/*"],
+			"graphql": ["node_modules/graphql"],
+			"graphql/*": ["node_modules/graphql/*"]
+		}
+	}
+}
