@@ -1,0 +1,55 @@
+{
+  "version": "2",
+  "tables": {
+    "cities": {
+      "name": "cities",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "SERIAL",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "name": {
+          "name": "name",
+          "type": "TEXT",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {}
+    },
+    "users": {
+      "name": "users",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "SERIAL",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "name": {
+          "name": "name",
+          "type": "TEXT",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "TEXT",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "city_id": {
+          "name": "city_id",
+          "type": "INT",
+          "primaryKey": false,
+          "notNull": false,
+          "references": "users_city_id_fkey;cities;id;;"
+        }
+      },
+      "indexes": {}
+    }
+  },
+  "enums": {}
+}
