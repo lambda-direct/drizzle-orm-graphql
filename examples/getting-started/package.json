@@ -7,7 +7,7 @@
 		"start": "node -r esbuild-register main.ts",
 		"type-check": "tsc --noEmit",
 		"type-check:watch": "pnpm type-check --watch",
-		"dev": "concurrently -n server,ts \"nodemon --watch '*/**' --ext 'ts' --exec 'pnpm start'\" \"pnpm:type-check:watch\"",
+		"dev": "concurrently -n server,ts \"nodemon --watch '../../**/*' --ext 'ts' --exec 'pnpm start'\" \"pnpm:type-check:watch\"",
 		"migration": "drizzle-kit migrate"
 	},
 	"keywords": [],

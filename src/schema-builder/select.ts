@@ -101,13 +101,13 @@ function buildGQLFieldFromTable({
 		};
 	} else {
 		args = {
-			filter: { type: buildGQLFilters(table) },
+			where: { type: buildGQLFilters(table) },
 		};
 		resolve = async (_source, args, _context, _info) => {
 			const request = table.select();
 
-			if (Object.keys(args?.filter ?? {}).length > 0) {
-				request.where(buildSQLFilters(args.filter));
+			if (Object.keys(args?.where ?? {}).length > 0) {
+				request.where(buildSQLFilters({ where: args.where, columns }));
 			}
 
 			return request.execute();

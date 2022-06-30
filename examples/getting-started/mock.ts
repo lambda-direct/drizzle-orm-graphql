@@ -57,20 +57,20 @@ const typeDefs = gql`
 		age: IntFilter
 		description: StringFilter
 		city_id__joined: CitiesFilter
-		$raw: String
-		$or: [UsersFilter]
-		$and: [UsersFilter]
-		$not: [UsersFilter]
+		_raw: String
+		_or: [UsersFilter]
+		_and: [UsersFilter]
+		_not: UsersFilter
 	}
 
 	input CitiesFilter {
 		id: StringFilter
 		name: StringFilter
-		$users__city_id__joined: UsersFilter
-		$raw: String
-		$or: [UsersFilter]
-		$and: [UsersFilter]
-		$not: [UsersFilter]
+		users__city_id__joined: UsersFilter
+		_raw: String
+		_or: [UsersFilter]
+		_and: [UsersFilter]
+		_not: UsersFilter
 	}
 
 	input update_users {
